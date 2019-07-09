@@ -52,18 +52,18 @@ public class Main {
             pos = (pos - 1) / 2;
         }
     }
-//
-//    public static void isHeapOk(ArrayList<Integer> heap){
-//        for(int i=0;i<heap.size()/2 ; i++){
-//            if((2*i+2) >= heap.size()){
-//
-//            }else if((2*i + 1) >= heap.size()){
-//
-//            }else{
-//                if(heap.get(i) > heap.get(2*i+2) && heap.get(i) > heap.get(2*i+1))
-//            }
-//        }
-//    }
+
+    public static void isHeapOk(ArrayList<Integer> heap){
+        for(int i=0;i<heap.size()/2 ; i++){
+            if((2*i+2) >= heap.size()){
+
+            }else if((2*i + 1) >= heap.size()){
+
+            }else{
+                if(heap.get(i) > heap.get(2*i+2) && heap.get(i) > heap.get(2*i+1))
+            }
+        }
+    }
 
     public static void heapify(ArrayList<Integer> heap,int pos){
 
