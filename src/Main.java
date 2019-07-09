@@ -41,6 +41,17 @@ public class Main {
         }
     }
 
+    public static void tprintHeap(ArrayList<Integer> heap){
+        for(int i=0;i< heap.size()/2 ; i++){
+            try{
+                System.out.println("parent is - "+heap.get(i)+" Lchild is - "+heap.get(2*i+1)+" R child is - "+heap.get(2*i+2));
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static void heapify(ArrayList<Integer> heap){
         int pos = heap.size() - 1 ;
         while (pos > 0) {
