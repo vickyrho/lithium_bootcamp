@@ -30,51 +30,7 @@ public class Main {
         heapify(heap,0);
     }
 
-    public static void printHeap(ArrayList<Integer> heap){
-        for(int i=0;i< heap.size()/2 ; i++){
-            try{
-            System.out.println("parent is - "+heap.get(i)+" Lchild is - "+heap.get(2*i+1)+" R child is - "+heap.get(2*i+2));
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
 
-    public static void tprintHeap(ArrayList<Integer> heap){
-        for(int i=0;i< heap.size()/2 ; i++){
-            try{
-                System.out.println("parent is - "+heap.get(i)+" Lchild is - "+heap.get(2*i+1)+" R child is - "+heap.get(2*i+2));
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void heapify(ArrayList<Integer> heap){
-        int pos = heap.size() - 1 ;
-        while (pos > 0) {
-            if (heap.get(pos) > heap.get((pos - 1) / 2)) {
-                int temp = heap.get(pos);
-                heap.set(pos, heap.get((pos - 1) / 2));
-                heap.set((pos - 1) / 2, temp);
-            }
-            pos = (pos - 1) / 2;
-        }
-    }
-
-    public static void isHeapOk(ArrayList<Integer> heap){
-        for(int i=0;i<heap.size()/2 ; i++){
-            if((2*i+2) >= heap.size()){
-
-            }else if((2*i + 1) >= heap.size()){
-
-            }else{
-                if(heap.get(i) > heap.get(2*i+2) && heap.get(i) > heap.get(2*i+1))
-            }
-        }
-    }
 
     public static void heapify(ArrayList<Integer> heap,int pos){
 
