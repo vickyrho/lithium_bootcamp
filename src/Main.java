@@ -24,10 +24,21 @@ public class Main {
 
     public static void deleteHeap(ArrayList<Integer> heap,int pos){
 
+        if(heap.size() == 0){
+            System.out.println("Empty heap");
+            return ;
+        }
+
+        if(heap.size() == 1){
+            System.out.println("heap becomes empty after deleting the Current root");
+            heap.remove(0);
+            return;
+        }
         heap.set(0,heap.get(pos-1));
         heap.remove(pos-1);
-
         heapify(heap,0);
+        System.out.println(heap);
+
     }
 
 
@@ -73,36 +84,40 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int size = 0 ;
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter the Capacity of an array");
-        size = scanner.nextInt() ;
 
         ArrayList<Integer> heap = new ArrayList<Integer>();
 
         int pos = 0 ;
 
-        while(size>0) {
-            System.out.println("Enter a value to insert into heap");
-            int val = scanner.nextInt();
-            try {
-                heapInsert(heap, val, pos);
-                pos++;
-            } catch (Exception e) {
-                e.printStackTrace();
+        while(true) {
+
+            System.out.println("Chooose one option \n1. insert \n2. delete \nAny other key to stop excecution");
+            int choice = scanner.nextInt();
+            if(choice == 1) {
+                System.out.println("Enter a value to insert into heap");
+                int val = scanner.nextInt();
+                try {
+                    heapInsert(heap, val, pos);
+                    pos++;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-            size--;
+            else if(choice == 2){
+                System.out.println("deleting a node");
+                try {
+                    deleteHeap(heap, heap.size());
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }else {
+                System.out.println("Stopping the max heap program");
+                break;
+            }
         }
 
-        System.out.println("Deleting the ROOT");
-
-        try {
-            deleteHeap(heap, pos);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
         System.out.print(heap);
 
     }
